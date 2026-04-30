@@ -1133,6 +1133,43 @@
       });
     }, { threshold: 0.3 });
     document.querySelectorAll('.skill-group').forEach(el => barObs.observe(el));
+
+	  // Modal popup for direct project links
+const hash = window.location.hash;
+if (hash && document.querySelector(hash)?.classList.contains('proj-card')) {
+  const target = document.querySelector(hash);
+
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position:fixed; inset:0; z-index:999;
+    background:rgba(0,0,0,0.55); backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center; padding:2rem;
+  `;
+
+  // Clone the card into modal
+  const modal = target.cloneNode(true);
+  modal.style.cssText = `
+    background:var(--surface2); border:1px solid var(--border);
+    border-radius:16px; padding:2rem; max-width:520px; width:100%;
+    box-shadow:0 24px 60px rgba(0,0,0,0.25); position:relative;
+  `;
+
+  // Close button
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '✕';
+  closeBtn.style.cssText = `
+    position:absolute; top:1rem; right:1rem;
+    background:none; border:none; font-size:18px;
+    cursor:pointer; color:var(--muted);
+  `;
+  closeBtn.onclick = () => overlay.remove();
+  overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); }
+
+  modal.appendChild(closeBtn);
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+}
   </script>
 </body>
 </html>
