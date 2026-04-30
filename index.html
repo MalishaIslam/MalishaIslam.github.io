@@ -1134,22 +1134,6 @@
     }, { threshold: 0.3 });
     document.querySelectorAll('.skill-group').forEach(el => barObs.observe(el));
 
-	  // Direct project link handler
-const hash = window.location.hash;
-if (hash && hash !== '#hero') {
-  const target = document.querySelector(hash);
-  if (target && target.classList.contains('proj-card')) {
-    // Hide all other proj-cards
-    document.querySelectorAll('.proj-card').forEach(card => {
-      if (card !== target) card.style.display = 'none';
-    });
-    // Hide section label and title too if desired
-    document.querySelector('#projects .section-label').style.display = 'none';
-    document.querySelector('#projects .section-title').style.display = 'none';
-    // Scroll to it
-    target.scrollIntoView({ behavior: 'smooth' });
-  }
-}
   </script>
 </body>
 </html>
