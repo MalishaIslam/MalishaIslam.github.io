@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malisha Islam Tapotee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#fafaf8;--surface:#f2f2ee;--surface2:#ffffff;--border:#e4e4dc;--muted:#8a8a80;--text:#3a3a35;--heading:#111110;--accent:#2d6a4f;--accent-mid:#40916c;--accent-light:#d8f3dc;--accent-pale:#f0faf3;--tag-bg:#eef7f1}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,250,248,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1080px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
+    .nav-name{font-size:15px;font-weight:600;color:var(--heading);text-decoration:none;letter-spacing:-0.01em;cursor:pointer}
+    .nav-links{display:flex;align-items:center;gap:0.15rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:400;padding:0.38rem 0.85rem;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap;cursor:pointer}
+    .nav-links a:hover{background:var(--surface);color:var(--heading)}
+    .nav-links a.active{background:var(--accent-light);color:var(--accent);font-weight:500}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .section-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:0.5rem}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:400;color:var(--heading);line-height:1.2;margin-bottom:2.8rem}
+    .btn{display:inline-block;text-decoration:none;font-size:14px;font-weight:500;padding:0.65rem 1.5rem;border-radius:8px;transition:all 0.18s}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:#245a42}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.55s ease,transform 0.55s ease}
+    .reveal.visible{opacity:1;transform:none}
+    /* MAIN */
+    #main-view section{padding:84px 0}
+    #main-view section+section{border-top:1px solid var(--border)}
+    #home{padding-top:130px!important;padding-bottom:84px!important}
+    .home-grid{display:grid;grid-template-columns:1fr 300px;gap:5rem;align-items:center}
+    .home-pill{display:inline-flex;align-items:center;gap:0.5rem;font-size:13px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.3rem 1rem;border-radius:99px;margin-bottom:1.5rem}
+    .home-pill::before{content:'●';font-size:7px;animation:blink 2s ease infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:500;color:var(--heading);line-height:1.1;margin-bottom:0.7rem;letter-spacing:-0.02em}
+    .home-role{font-size:15px;font-weight:400;color:var(--muted);margin-bottom:1.5rem}
+    .home-bio{font-size:15px;color:var(--text);line-height:1.85;max-width:54ch;margin-bottom:2rem}
+    .home-cta{display:flex;gap:0.75rem;flex-wrap:wrap}
+    .profile-card{background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:1.8rem;text-align:center}
+    .profile-photo{width:250px;height:250px;border-radius:50%;overflow:hidden;margin:0 auto 1.2rem;border:3px solid var(--accent-light);background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:3rem}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;display:block;object-position:center top}
+    .profile-name{font-size:15px;font-weight:600;color:var(--heading);margin-bottom:0.25rem}
+    .profile-title{font-size:13px;color:var(--muted);margin-bottom:1.3rem;line-height:1.5}
+    .profile-details{display:flex;flex-direction:column;gap:0.55rem;text-align:left;margin-bottom:1.3rem}
+    .profile-row{display:flex;align-items:flex-start;gap:0.6rem;font-size:13px;color:var(--text)}
+    .profile-row .icon{color:var(--accent-mid);width:16px;flex-shrink:0;margin-top:2px}
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+    .proj-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:1.5rem;color:inherit;display:flex;flex-direction:column;gap:0.7rem;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s;cursor:pointer;position:relative;text-decoration:none}
+    .proj-card:hover{border-color:var(--accent-mid);box-shadow:0 6px 24px rgba(45,106,79,0.1);transform:translateY(-2px)}
+    .proj-card::after{content:'Click to expand ↗';position:absolute;bottom:0.9rem;right:1rem;font-size:10px;font-weight:500;color:var(--muted);opacity:0;transition:opacity 0.2s;pointer-events:none}
+    .proj-card:hover::after{opacity:1}
+    .proj-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem}
+    .proj-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .proj-title{font-size:14px;font-weight:600;color:var(--heading);line-height:1.35}
+    .proj-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:auto}
+    .proj-tag{font-size:11px;font-weight:500;padding:0.18rem 0.6rem;border-radius:99px;background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+    .pub-list{display:flex;flex-direction:column}
+    .pub-item{display:grid;grid-template-columns:58px 1fr auto;gap:1.2rem;align-items:start;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+    .pub-item:first-child{border-top:1px solid var(--border)}
+    .pub-year{font-size:12px;font-weight:600;color:var(--muted);padding-top:2px}
+    .pub-title{font-size:14px;font-weight:500;color:var(--heading);margin-bottom:0.3rem;line-height:1.45}
+    .pub-meta{font-size:13px;color:var(--muted);line-height:1.5}
+    .pub-meta strong{color:var(--accent);font-weight:500}
+    .pub-badge{font-size:11px;font-weight:600;padding:0.22rem 0.7rem;border-radius:99px;white-space:nowrap}
+    .badge-conf{background:#e8f0fe;color:#3367d6}
+    .skill-section-title{font-size:13px;font-weight:600;color:var(--heading);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+    .chips{display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.4rem}
+    .chip{font-size:12px;font-weight:500;padding:0.28rem 0.8rem;border:1px solid var(--border);border-radius:6px;color:var(--text);background:var(--surface2);transition:all 0.15s}
+    .chip:hover{border-color:var(--accent-mid);color:var(--accent);background:var(--accent-pale)}
+    .exp-list{display:flex;flex-direction:column}
+    .exp-item{display:grid;grid-template-columns:190px 1fr;gap:2rem;padding:1.8rem 0;border-bottom:1px solid var(--border)}
+    .exp-item:first-child{border-top:1px solid var(--border)}
+    .exp-dates{font-size:13px;font-weight:400;color:var(--muted);margin-bottom:0.2rem}
+    .exp-org{font-size:13px;font-weight:600;color:var(--accent)}
+    .exp-role{font-size:15px;font-weight:600;color:var(--heading);margin-bottom:0.15rem}
+    .exp-dept{font-size:13px;color:var(--muted);margin-bottom:0.7rem}
+    .lead-list{display:flex;flex-direction:column;gap:1rem}
+    .lead-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.3rem 1.4rem;background:var(--surface2);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s}
+    .lead-item:hover{border-color:var(--accent-mid)}
+    .lead-icon{width:38px;height:38px;border-radius:9px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+    .lead-title{font-size:14px;font-weight:600;color:var(--heading);margin-bottom:0.2rem}
+    .lead-sub{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:0.3rem}
+    .lead-desc{font-size:13px;color:var(--muted);line-height:1.7}
+    /* DETAIL VIEW */
+    #detail-view{display:none;padding-top:58px}
+    .detail-hero{padding:60px 0 50px;border-bottom:1px solid var(--border)}
+    .back-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:13px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.35rem 1rem;border-radius:99px;cursor:pointer;text-decoration:none;margin-bottom:2rem;transition:background 0.15s}
+    .back-btn:hover{background:var(--accent-light)}
+    .share-btn{display:inline-flex;align-items:center;gap:0.45rem;font-size:13px;font-weight:500;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:0.35rem 1rem;border-radius:99px;cursor:pointer;margin-bottom:2rem;margin-left:0.6rem;transition:all 0.15s;position:relative}
+    .share-btn:hover{border-color:var(--accent-mid);color:var(--accent);background:var(--accent-pale)}
+    .share-btn.copied{color:var(--accent);background:var(--accent-pale);border-color:#b7e4c7}
+    .share-toast{position:absolute;top:-2.2rem;left:50%;transform:translateX(-50%);background:var(--heading);color:#fff;font-size:11px;font-weight:500;padding:0.25rem 0.7rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none}
+    .share-btn.copied .share-toast{opacity:1}
+    .detail-section-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:0.6rem}
+    .detail-icon{width:56px;height:56px;border-radius:14px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:1.2rem;border:1px solid #b7e4c7}
+    .detail-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:500;color:var(--heading);line-height:1.2;margin-bottom:1.5rem}
+    .detail-links{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2rem}
+    .detail-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:13px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.4rem 1rem;border-radius:99px;text-decoration:none;transition:background 0.15s}
+    .detail-link:hover{background:var(--accent-light)}
+    .highlights{display:flex;gap:0;margin-top:1.5rem;background:var(--surface2);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-width:680px}
+    .highlight{flex:1;padding:1.2rem 1.5rem;text-align:center;border-right:1px solid var(--border)}
+    .highlight:last-child{border-right:none}
+    .hl-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:500;color:var(--heading);line-height:1;margin-bottom:0.3rem}
+    .hl-label{font-size:12px;color:var(--muted);line-height:1.4}
+    .detail-content{padding:60px 0;max-width:860px}
+    .overview{font-size:16px;color:var(--text);line-height:1.9;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .details-grid{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem}
+    .detail-block{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:1.8rem}
+    .detail-heading{font-size:14px;font-weight:600;color:var(--heading);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem}
+    .detail-heading::before{content:'';display:inline-block;width:3px;height:16px;background:var(--accent);border-radius:99px;flex-shrink:0}
+    .detail-body{font-size:14px;color:var(--text);line-height:1.85}
+    .tags-section h3{font-size:13px;font-weight:600;color:var(--heading);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+    .detail-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+    .detail-tag{font-size:12px;font-weight:500;padding:0.3rem 0.8rem;border-radius:99px;background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+    footer{border-top:1px solid var(--border);padding:1.6rem 0}
+    .footer-inner{max-width:1080px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    .fade-up{animation:fadeUp 0.45s ease both}
+    .fade-up-2{animation:fadeUp 0.45s ease 0.08s both}
+    .fade-up-3{animation:fadeUp 0.45s ease 0.16s both}
+    @media(max-width:860px){.home-grid{grid-template-columns:1fr}.profile-card{max-width:320px}.proj-grid{grid-template-columns:1fr 1fr}.exp-item{grid-template-columns:1fr;gap:0.3rem}.pub-item{grid-template-columns:1fr}.pub-year{display:none}.highlights{flex-direction:column;max-width:100%}.highlight{border-right:none;border-bottom:1px solid var(--border)}.highlight:last-child{border-bottom:none}}
+    @media(max-width:560px){.proj-grid{grid-template-columns:1fr}.nav-links a{padding:0.35rem 0.55rem;font-size:13px}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a id="nav-name" class="nav-name" href="#home">Malisha Islam Tapotee</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MAIN VIEW -->
+<div id="main-view">
+  <section id="home">
+    <div class="container">
+      <div class="home-grid">
+        <div>
+          <p class="home-pill">Open to Work</p>
+          <h1>Malisha Islam Tapotee</h1>
+          <p class="home-role">M.S. Researcher</p>
+          <p class="home-bio">I am completing my Master's degree in Electrical Engineering at the University of Central Florida (UCF) in Summer 2026, and my thesis work focused on AI-driven antimicrobial peptide (AMP) discovery, followed by experimental validation using antibacterial activity and cytotoxicity testing.</p>
+          <p class="home-bio">After completing my Master's degree, I am actively seeking job opportunities at the intersection of machine learning, biological data analysis, and laboratory validation in interdisciplinary research environments. I am also interested in data science and coordination-focused roles where I can contribute to technical development, research translation, and project execution. I would be happy to connect.</p>
+          <div class="home-cta">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="mailto:malishaislam.tapotee@ucf.edu" class="btn btn-primary reveal">Contact Me</a>
+            <a href="https://www.linkedin.com/in/malisha-islam-tapotee" class="btn btn-primary reveal">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <div class="profile-card reveal">
+          <div class="profile-photo">
+            <img src="Image_Malisha.jpg" alt="Malisha Islam Tapotee" onerror="this.style.display='none';this.parentElement.innerHTML='&#x1F469;&#x200D;&#x1F52C;';" />
+          </div>
+          <p class="profile-name">Malisha Islam Tapotee</p>
+          <p class="profile-title">Graduate Research Assistant<br/>University of Central Florida</p>
+          <div class="profile-details">
+            <div class="profile-row"><span class="icon">&#x1F393;</span> M.S. Electrical Engineering, UCF</div>
+            <div class="profile-row"><span class="icon">&#x2709;&#xFE0F;</span><span><a href="mailto:malishaislam.tapotee@ucf.edu" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;">malishaislam.tapotee@ucf.edu</a></span></div>
+            <div class="profile-row"><span class="icon">&#x1F4BC;</span><span><a href="https://www.linkedin.com/in/malisha-islam-tapotee" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;">LinkedIn</a></span></div>
+            <div class="profile-row"><span class="icon">&#x1F4BB;</span><span><a href="https://github.com/MalishaIslam" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;">GitHub</a></span></div>
+            <div class="profile-row"><span class="icon">&#x1F517;</span><span><a href="https://scholar.google.com/citations?hl=en&user=p4QkaqgAAAAJ" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;">Google Scholar</a></span></div>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span><span class="proj-tag">Data Analysis</span>
+            <span class="proj-tag">Drug Discovery</span><span class="proj-tag">Laboratory Validation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="section-label reveal">Research &amp; Projects</p>
+      <h2 class="section-title reveal">What I've Built &amp; Discovered</h2>
+      <div class="proj-grid">
+
+        <div class="proj-card reveal" onclick="goToProject('amp')">
+          <div class="proj-card-top">
+            <div class="proj-icon">&#x1F48A;</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://github.com/MalishaIslam/Antimicrobial-Peptide-Discovery" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+              <a href="https://github.com/MalishaIslam/Antimicrobial-Peptide-Discovery/blob/main/Poster.png" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Poster &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">Computational Antimicrobial Peptide (AMP) Discovery &amp; Experimental Validation</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>Generated <strong>118,647 peptide sequences</strong> using diffusion-based generative models</li>
+            <li>Screened candidates using Chemprop GNN for activity, toxicity, and mechanistic prediction</li>
+            <li>Experimentally validated <strong>13 AMPs</strong> using MIC and cytotoxicity assays</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Diffusion Models</span><span class="proj-tag">Chemprop GNN</span><span class="proj-tag">AlphaFold</span><span class="proj-tag">Optuna</span><span class="proj-tag">HPC</span><span class="proj-tag">MIC Assay</span></div>
+        </div>
+
+        <div class="proj-card reveal" onclick="goToProject('workflow')">
+          <div class="proj-card-top">
+            <div class="proj-icon">&#x2699;&#xFE0F;</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://github.com/MalishaIslam/EMA6096_Reproducible_Workflow" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">Containerized Reproducible Workflow for UniProt Data Analysis</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>Built a containerized reproducible workflow using Podman, Makefile, and Python — single command execution</li>
+            <li>Automated data download, processing, visualization, and report generation across environments</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Linux</span><span class="proj-tag">Podman</span><span class="proj-tag">Makefile</span><span class="proj-tag">Python</span><span class="proj-tag">Typst</span></div>
+        </div>
+
+        <div class="proj-card reveal" onclick="goToProject('peptox')">
+          <div class="proj-card-top">
+            <div class="proj-icon">&#x1F4CA;</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://github.com/MalishaIslam/Peptides-Toxicity-Prediction" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+              <a href="https://youtu.be/7YdUt1jNPTY?feature=shared" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Video &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">Peptide Toxicity Prediction using Ensemble ML (Super Learner Framework)</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>Classification pipeline using 438 physicochemical features with stratified cross-validation</li>
+            <li>XGBoost + Super Learner stacking: <strong>91.55% accuracy</strong>, 0.83 MCC</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Ensemble Learning</span><span class="proj-tag">XGBoost</span><span class="proj-tag">Feature Selection</span><span class="proj-tag">Python</span></div>
+        </div>
+
+        <div class="proj-card reveal" onclick="goToProject('m2ecg')">
+          <div class="proj-card-top">
+            <div class="proj-icon">&#x1F4C8;</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10398172" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Paper &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">M2ECG: Wearable mechanocardiograms to electrocardiogram estimation using deep learning</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>End-to-end UNet pipeline for MCG to ECG signal translation with full preprocessing</li>
+            <li>Evaluated via PCC, MAE, MSE, RMSE, heart rate, and HRV metrics</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">UNet</span><span class="proj-tag">ECG</span><span class="proj-tag">MCG</span><span class="proj-tag">PCC</span><span class="proj-tag">HRV</span></div>
+        </div>
+
+        <div class="proj-card reveal" onclick="goToProject('locomotion')">
+          <div class="proj-card-top">
+            <div class="proj-icon">&#x1F6B6;</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3460418.3479384" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Paper &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">Human Locomotion Recognition Pipeline</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>Feature extraction: 1350 to 250 features from radio sensor data</li>
+            <li>XGBoost achieving 79% F1 across 8 transportation modes</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">XGBoost</span><span class="proj-tag">pandas</span></div>
+        </div>
+
+        <div class="proj-card reveal" onclick="goToProject('asd')">
+          <div class="proj-card-top">
+            <div class="proj-icon">&#x1F916;</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://ieeexplore.ieee.org/abstract/document/9638874" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Paper &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">Task Detection of Autism Spectrum Disorder (ASD) Children by using Machine Learning</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>Detected 3 tasks from skeleton and gaze features across 56 ASD children</li>
+            <li>Compared Robot Enhanced Therapy (RET) vs Standard Human Therapy (SHT)</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Skeleton Features</span><span class="proj-tag">Gaze Features</span><span class="proj-tag">ML Classification</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="section-label reveal">Selected Publications</p>
+      <h2 class="section-title reveal">Peer-Reviewed Work</h2>
+      <div class="pub-list">
+        <div class="pub-item reveal"><span class="pub-year">2024</span><div><p class="pub-title">M2ECG: Wearable mechanocardiograms to electrocardiogram estimation using deep learning</p><p class="pub-meta"><strong>Malisha Islam Tapotee</strong>, Purnata Saha, Sakib Mahmud, Abdulrahman Alqahtani, and Muhammad EH Chowdhury. <i>IEEE Access</i>, 2024.</p></div><a href="https://ieeexplore.ieee.org/abstract/document/10398172" target="_blank" rel="noopener" class="pub-badge badge-conf" style="text-decoration:none">&#x2197;</a></div>
+        <div class="pub-item reveal"><span class="pub-year">2023</span><div><p class="pub-title">PCovNet+: A CNN-VAE anomaly detection framework with LSTM embeddings for smartwatch-based COVID-19 detection</p><p class="pub-meta">Farhan Fuad Abir, Muhammad EH Chowdhury, <strong>Malisha Islam Tapotee</strong>, Adam Mushtak, Amith Khandakar, Sakib Mahmud, Anwarul Hasan. <i>Engineering Applications of Artificial Intelligence</i>, 2023.</p></div><a href="https://www.sciencedirect.com/science/article/pii/S0952197623003147" target="_blank" rel="noopener" class="pub-badge badge-conf" style="text-decoration:none">&#x2197;</a></div>
+        <div class="pub-item reveal"><span class="pub-year">2021</span><div><p class="pub-title">Task detection of ASD children by analyzing robotic enhanced and standard human therapy</p><p class="pub-meta">Purnata Saha, <strong>Malisha Islam Tapotee</strong>, Md Atiqur Rahman Ahad. <i>IEEE ICMU</i>, 2021.</p></div><a href="https://ieeexplore.ieee.org/abstract/document/9638874" target="_blank" rel="noopener" class="pub-badge badge-conf" style="text-decoration:none">&#x2197;</a></div>
+        <div class="pub-item reveal"><span class="pub-year">2021</span><div><p class="pub-title">An empirical approach for human locomotion and transportation recognition from Radio Data</p><p class="pub-meta">Purnata Saha, Md Morshed Alam, <strong>Malisha Islam Tapotee</strong>, Sriman Bidhan Baray, Md Atiqur Rahman Ahad. <i>ACM UbiComp/ISWC</i>, 2021.</p></div><a href="https://dl.acm.org/doi/abs/10.1145/3460418.3479384" target="_blank" rel="noopener" class="pub-badge badge-conf" style="text-decoration:none">&#x2197;</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="section-label reveal">Technical Skills</p>
+      <h2 class="section-title reveal">Tools &amp; Expertise</h2>
+      <div class="reveal"><p class="skill-section-title">Programming</p><div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">C</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Machine Learning &amp; Deep Learning</p><div class="chips"><span class="chip">Classical ML methods</span><span class="chip">Diffusion models</span><span class="chip">Graph Neural Networks</span><span class="chip">Transformers</span><span class="chip">GANs</span><span class="chip">CycleGAN</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Computational Biology</p><div class="chips"><span class="chip">RDKit</span><span class="chip">SMILES pipelines</span><span class="chip">BioPython</span><span class="chip">Chemprop</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Deep Learning Frameworks</p><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Scientific Computing &amp; Reproducibility</p><div class="chips"><span class="chip">Linux</span><span class="chip">HPC Clusters</span><span class="chip">Git</span><span class="chip">Podman</span><span class="chip">VS Code</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Wet Lab</p><div class="chips"><span class="chip">MIC Assays</span><span class="chip">Cytotoxicity Assays</span><span class="chip">Lyophilization</span><span class="chip">Lab Inventory Management</span><span class="chip">Vendor Coordination</span><span class="chip">Experimental Documentation</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Structural Bioinformatics &amp; Molecular Simulation</p><div class="chips"><span class="chip">AlphaFold</span><span class="chip">GROMACS</span><span class="chip">VMD</span><span class="chip">ChimeraX</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Data Analysis &amp; Visualization</p><div class="chips"><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SciPy</span><span class="chip">matplotlib</span><span class="chip">seaborn</span><span class="chip">ggplot2</span><span class="chip">Plotly</span><span class="chip">MATLAB</span></div></div>
+    </div>
+  </section>
+
+  <section id="experience" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="section-label reveal">Experience</p>
+      <h2 class="section-title reveal">Career History</h2>
+      <div class="exp-list">
+        <div class="exp-item reveal"><div><p class="exp-dates">Jan 2024 – Aug 2026 (Expected)</p><p class="exp-org">University of Central Florida</p><p class="exp-org">Orlando, FL</p></div><div><p class="exp-role">Graduate Research Assistant</p><p class="exp-dept">Thesis: Computational Antimicrobial Peptide Discovery &amp; Experimental Validation</p><p style="font-size:14px;color:var(--text);line-height:1.8">Developed AI-driven pipelines for antimicrobial peptide discovery using deep learning, with experimental validation through MIC and cytotoxicity evaluation workflows</p></div></div>
+        <div class="exp-item reveal"><div><p class="exp-dates">Jun 2022 – Jun 2023</p><p class="exp-org">Qatar University Machine Learning Group</p><p class="exp-org">(Remote)</p></div><div><p class="exp-role">Research Assistant</p><p class="exp-dept">M2ECG: Wearable mechanocardiograms to ECG estimation using deep learning</p><p style="font-size:14px;color:var(--text);line-height:1.8">Built a UNet based pipeline to translate MCG signals into ECG signals; evaluated performance using PCC, MAE, MSE, RMSE, heart rate, and HRV metrics</p></div></div>
+        <div class="exp-item reveal"><div><p class="exp-dates">Apr 2021 – Nov 2021</p><p class="exp-org">Datasoft Manufacturing &amp; Assembly Inc.</p><p class="exp-org">Dhaka, Bangladesh</p></div><div><p class="exp-role">Engineering Intern</p><p class="exp-dept">IoT based Wearable Physiological Monitoring System</p><p style="font-size:14px;color:var(--text);line-height:1.8">Implemented an IoT-enabled wearable physiological monitoring system supporting real-time sensor data collection and transmission using ThingsBoard</p></div></div>
+        <div class="exp-item reveal"><div><p class="exp-dates">Sep 2021 – Sep 2022</p><p class="exp-org">Dhaka, Bangladesh</p></div><div><p class="exp-role">Tutor</p><p class="exp-dept">Python Programming and Introductory Web Development</p><p style="font-size:14px;color:var(--text);line-height:1.8">Taught foundational Python programming concepts and introductory HTML web development</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="section-label reveal">Leadership &amp; Service</p>
+      <h2 class="section-title reveal">Community &amp; Outreach</h2>
+      <div class="lead-list">
+        <div class="lead-item reveal"><div class="lead-icon">&#x1F91D;</div><div><p class="lead-title">Volunteer — ICPC North America Championship</p><p class="lead-sub">2024</p><p class="lead-desc">Coordinated event logistics for 500+ participants at an international programming competition, managing scheduling and on-site operations across multiple teams</p></div></div>
+        <div class="lead-item reveal"><div class="lead-icon">&#x1F91D;</div><div><p class="lead-title">Chair — IEEE Student Branch University of Dhaka</p><p class="lead-sub">Jun 2021 – Dec 2022</p><p class="lead-desc">Led technical programs and outreach initiatives for 100+ members, coordinating cross-team activities contributing to the IEEE Asia-Pacific Exemplary Branch Award</p></div></div>
+        <div class="lead-item reveal"><div class="lead-icon">&#x1F91D;</div><div><p class="lead-title">Student Activity Secretary — IEEE Student Branch University of Dhaka</p><p class="lead-sub">May 2020 – Jun 2021</p><p class="lead-desc">Coordinated membership engagement and technical outreach with a team of 6 volunteers, organizing 25+ virtual events during COVID-19</p></div></div>
+        <div class="lead-item reveal"><div class="lead-icon">&#x1F91D;</div><div><p class="lead-title">Program Coordinator — IEEE Women In Engineering Affinity Group</p><p class="lead-sub">Mar 2019 – Mar 2020</p><p class="lead-desc">Organized robotics outreach programs for 50+ middle school students and supported technical workshops and professional development events for engineering students</p></div></div>
+      </div>
+    </div>
+  </section>
+</div><!-- /main-view -->
+
+<!-- DETAIL VIEW -->
+<div id="detail-view">
+  <div class="detail-hero">
+    <div class="container">
+      <div>
+        <a class="back-btn" onclick="goBack()">&#x2190; Back to Portfolio</a>
+        <button class="share-btn" id="share-btn" onclick="copyLink()">
+          <span class="share-toast" id="share-toast">Link copied!</span>
+          &#x1F517; Copy shareable link
+        </button>
+      </div>
+      <div class="fade-up-2">
+        <p class="detail-section-label" id="detail-section"></p>
+        <div class="detail-icon" id="detail-icon"></div>
+        <h1 class="detail-title" id="detail-title"></h1>
+        <div class="detail-links" id="detail-links"></div>
+      </div>
+      <div class="highlights fade-up-3" id="detail-highlights"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="detail-content">
+      <p class="overview fade-up" id="detail-overview"></p>
+      <div class="details-grid fade-up-2" id="detail-blocks"></div>
+      <div class="tags-section fade-up-3">
+        <h3>Technologies &amp; Methods</h3>
+        <div class="detail-tags" id="detail-tags"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>&#x00A9; 2026 Malisha Islam Tapotee</span>
+    <span id="footer-back" style="display:none"><a onclick="goBack()" style="cursor:pointer;color:var(--accent)">&#x2190; Back to Portfolio</a></span>
+  </div>
+</footer>
+
+<script>
+const projects={amp:{icon:'💊',title:'Computational Antimicrobial Peptide (AMP) Discovery & Experimental Validation',section:'Thesis Research · University of Central Florida',links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/Antimicrobial-Peptide-Discovery'},{label:'Poster',url:'https://github.com/MalishaIslam/Antimicrobial-Peptide-Discovery/blob/main/Poster.png'}],highlights:[{num:'118,647',label:'Peptide sequences generated'},{num:'13',label:'Therapeutic candidates validated'},{num:'7',label:'Bacterial strains tested'}],overview:'This thesis project developed an end-to-end AI-driven pipeline for discovering novel antimicrobial peptides (AMPs) — a promising class of molecules to combat antibiotic-resistant bacteria. The project spans from computational generative design through wet-lab experimental validation.',details:[{heading:'Generative Modeling',body:'Generated 118,647 novel peptide sequences using diffusion-based generative models trained on curated AMP databases. Sequences were designed to explore diverse physicochemical properties while maintaining biological plausibility.'},{heading:'Computational Screening',body:'Screened all candidates using Chemprop Graph Neural Networks for antimicrobial activity prediction, toxicity estimation, and mechanistic inference. Hyperparameter optimization was performed with Optuna using Bayesian optimization. AlphaFold was used for 3D structure prediction of top candidates.'},{heading:'Experimental Validation',body:'Validated 13 shortlisted AMPs through Minimum Inhibitory Concentration (MIC) assays across multiple bacterial strains, and assessed mammalian cytotoxicity using cell-based assays. All wet-lab experiments followed standardized protocols with proper documentation.'},{heading:'Infrastructure',body:'All large-scale computations were executed on HPC clusters. Pipelines were built in Python with full reproducibility, version control, and modular design for reuse.'}],tags:['Diffusion Models','Chemprop GNN','AlphaFold','Optuna','Bayesian Optimization','HPC','MIC Assay','Cytotoxicity Assay','Python','RDKit','SMILES']},workflow:{icon:'⚙️',title:'Containerized Reproducible Workflow for UniProt Data Analysis',section:'Reproducible Research · UCF Graduate Course Project',links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/EMA6096_Reproducible_Workflow'}],highlights:[{num:'1 cmd',label:'Full pipeline execution'},{num:'100%',label:'Cross-environment reproducibility'},{num:'Auto',label:'Report generation via Typst'}],overview:'This project demonstrates best practices in reproducible computational science by building a fully containerized, single-command workflow for downloading, processing, analyzing, and reporting on UniProt protein database data.',details:[{heading:'Containerization with Podman',body:'The entire pipeline runs inside a Podman container, eliminating environment-specific dependencies and ensuring identical outputs across different operating systems and hardware configurations.'},{heading:'Makefile Orchestration',body:'A single Makefile coordinates all pipeline stages — data download, processing, visualization, and report generation — in the correct order, with dependency tracking to avoid redundant computation.'},{heading:'Automated Analysis',body:'Python scripts handle data ingestion from UniProt, transformation into structured databases, statistical analysis, and visualization generation, all fully parameterized and documented.'},{heading:'Report Generation',body:'Final reports are automatically compiled using Typst, a modern typesetting system, producing polished PDF outputs from the analysis results without manual intervention.'}],tags:['Linux','Podman','Makefile','Python','Typst','UniProt','Reproducibility','Bioinformatics']},peptox:{icon:'📊',title:'Peptide Toxicity Prediction using Ensemble Machine Learning (Super Learner Framework)',section:'Machine Learning · Computational Biology',links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/Peptides-Toxicity-Prediction'},{label:'Video Demo',url:'https://youtu.be/7YdUt1jNPTY?feature=shared'}],highlights:[{num:'91.55%',label:'Classification accuracy'},{num:'0.83',label:'Matthews Correlation Coefficient'},{num:'438',label:'Physicochemical features'}],overview:'This project developed a robust machine learning pipeline for binary classification of peptides as toxic or non-toxic, addressing a critical challenge in therapeutic peptide development where toxicity prediction can accelerate drug candidate screening.',details:[{heading:'Feature Engineering',body:'438 sequence-derived physicochemical features were computed from peptide amino acid sequences, capturing properties like hydrophobicity, charge, molecular weight, aromaticity, and secondary structure propensities.'},{heading:'Model Development',body:'Multiple ML classifiers were trained and evaluated using stratified k-fold cross-validation to ensure balanced class representation. Models included Random Forest, SVM, Logistic Regression, and gradient boosting methods.'},{heading:'Super Learner Ensemble',body:'A Super Learner ensemble stacking framework was implemented, where a meta-learner combines predictions from base classifiers, leveraging complementary strengths of diverse models.'},{heading:'Feature Selection with XGBoost',body:'XGBoost feature importance scores identified the most predictive physicochemical descriptors, enabling dimensionality reduction while maintaining 91.55% accuracy and 0.83 MCC.'}],tags:['Ensemble Learning','XGBoost','Super Learner','Feature Selection','Python','Scikit-learn','Cross-validation','Peptide Informatics']},m2ecg:{icon:'📈',title:'M2ECG: Wearable Mechanocardiograms to Electrocardiogram Estimation using Deep Learning',section:'Published · IEEE Access 2024',links:[{label:'IEEE Paper',url:'https://ieeexplore.ieee.org/abstract/document/10398172'}],highlights:[{num:'UNet',label:'Architecture used'},{num:'PCC',label:'Primary evaluation metric'},{num:'HRV',label:'Heart rate variability analysis'}],overview:'Published in IEEE Access (2024), this work addresses the challenge of non-invasively estimating electrocardiogram (ECG) signals from wearable mechanocardiogram (MCG) sensors — enabling cardiac monitoring without traditional electrode placement.',details:[{heading:'Signal Translation Pipeline',body:'Developed an end-to-end deep learning pipeline using a UNet architecture adapted for 1D physiological signal translation, converting MCG (mechanical heart vibrations) to ECG (electrical heart signals).'},{heading:'Data Preprocessing',body:'Implemented comprehensive preprocessing including noise filtering, signal alignment, normalization, and segmentation to prepare paired MCG-ECG recordings for model training.'},{heading:'Performance Evaluation',body:'Evaluated reconstructed ECG signals using Pearson Correlation Coefficient (PCC), MAE, MSE, RMSE, derived heart rate, and Heart Rate Variability (HRV) metrics to comprehensively assess clinical relevance.'},{heading:'Clinical Relevance',body:'Enables potential integration into comfortable wearable devices for continuous cardiac monitoring, removing the need for adhesive electrodes while maintaining diagnostic-quality signal fidelity.'}],tags:['UNet','ECG','MCG','Deep Learning','PCC','HRV','PyTorch','Signal Processing','Wearable Sensing']},locomotion:{icon:'🚶',title:'Human Locomotion Recognition Pipeline',section:'Published · ACM UbiComp/ISWC 2021',links:[{label:'ACM Paper',url:'https://dl.acm.org/doi/abs/10.1145/3460418.3479384'}],highlights:[{num:'79%',label:'F1 score across 8 modes'},{num:'250',label:'Features after reduction'},{num:'8',label:'Transportation modes classified'}],overview:'Published at ACM UbiComp/ISWC 2021, this project built a machine learning pipeline for recognizing human locomotion and transportation modes from radio sensor data — enabling ambient activity sensing without camera-based privacy concerns.',details:[{heading:'Sensor Data Processing',body:'Processed raw radio sensor data through a multi-stage cleaning pipeline addressing missing values, sensor noise, and temporal misalignment across recording sessions.'},{heading:'Feature Extraction & Reduction',body:'Extracted 1,350 time and frequency-domain features from sensor streams, then applied feature selection to reduce to 250 most informative features, balancing model complexity with predictive power.'},{heading:'XGBoost Classification',body:'Trained an XGBoost gradient boosting classifier to distinguish 8 transportation modes (walking, running, cycling, bus, car, subway, etc.), achieving 79% macro F1 score.'},{heading:'Evaluation & Analysis',body:'Performed per-class confusion analysis to identify mode-specific error patterns and compared against baseline classifiers, demonstrating the advantage of gradient boosting with engineered features.'}],tags:['Python','XGBoost','Scikit-learn','Feature Engineering','Activity Recognition','NumPy','pandas','Matplotlib']},asd:{icon:'🤖',title:'Task Detection of Autism Spectrum Disorder (ASD) Children by using Machine Learning',section:'Published · IEEE ICMU 2021',links:[{label:'IEEE Paper',url:'https://ieeexplore.ieee.org/abstract/document/9638874'}],highlights:[{num:'56',label:'ASD children in study'},{num:'3',label:'Therapeutic tasks detected'},{num:'RET vs SHT',label:'Therapy modes compared'}],overview:'Published at IEEE ICMU 2021, this project applied machine learning to detect and classify therapeutic task engagement in children with Autism Spectrum Disorder, comparing Robot Enhanced Therapy (RET) with Standard Human Therapy (SHT) using skeleton and gaze-based features.',details:[{heading:'Task Detection Framework',body:'Developed a classification system to detect three key therapeutic tasks — Imitation, Joint Attention, and Turn-Taking — that are core components of ASD behavioral therapy protocols.'},{heading:'Feature Extraction',body:'Extracted skeleton-based features (body joint positions, motion trajectories, posture angles) and gaze-based features (eye contact direction, gaze fixation) from video recordings of 56 ASD children during therapy sessions.'},{heading:'Therapy Comparison',body:'Analyzed whether Robot Enhanced Therapy (RET) produced measurably different task engagement patterns compared to Standard Human Therapy (SHT), providing data-driven insights for therapy design.'},{heading:'Clinical Impact',body:'The automated detection pipeline enables objective, scalable measurement of therapy engagement, reducing reliance on manual annotation and enabling longitudinal tracking of child progress.'}],tags:['Machine Learning','Skeleton Features','Gaze Features','ASD','Robot Enhanced Therapy','Activity Recognition','Computer Vision']}};
+
+function getHashProject(){const m=location.hash.match(/^#project\/(.+)$/);return m?m[1]:null}
+function goToProject(id){location.hash='project/'+id}
+function goBack(){history.pushState('','',location.pathname);showMainView()}
+
+function showMainView(){
+  document.getElementById('main-view').style.display='block';
+  document.getElementById('detail-view').style.display='none';
+  document.getElementById('footer-back').style.display='none';
+  document.title='Malisha Islam Tapotee';
+  const nl=document.getElementById('nav-links');
+  nl.innerHTML='<li><a href="#home">Home</a></li><li><a href="#projects">Research</a></li><li><a href="#publications">Publications</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#leadership">Leadership</a></li>';
+  const nn=document.getElementById('nav-name');
+  nn.href='#home';nn.onclick=null;nn.style.cursor='';
+  initScrollNav();
+  window.scrollTo({top:0});
+}
+
+function showDetailView(id){
+  const p=projects[id];if(!p){showMainView();return}
+  document.getElementById('main-view').style.display='none';
+  document.getElementById('detail-view').style.display='block';
+  document.getElementById('footer-back').style.display='block';
+  document.title=p.title+' · Malisha Islam Tapotee';
+  const nl=document.getElementById('nav-links');
+  const secs=[['home','Home'],['projects','Research'],['publications','Publications'],['skills','Skills'],['experience','Experience'],['leadership','Leadership']];
+  nl.innerHTML=secs.map(([sid,label])=>`<li><a onclick="goBack();setTimeout(()=>{const el=document.getElementById('${sid}');if(el)el.scrollIntoView({behavior:'smooth'})},100)" style="cursor:pointer">${label}</a></li>`).join('');
+  const nn=document.getElementById('nav-name');
+  nn.removeAttribute('href');nn.onclick=goBack;nn.style.cursor='pointer';
+  document.getElementById('detail-section').textContent=p.section;
+  document.getElementById('detail-icon').textContent=p.icon;
+  document.getElementById('detail-title').textContent=p.title;
+  document.getElementById('detail-overview').textContent=p.overview;
+  document.getElementById('detail-links').innerHTML=p.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener" class="detail-link">${l.label} ↗</a>`).join('');
+  document.getElementById('detail-highlights').innerHTML=p.highlights.map(h=>`<div class="highlight"><div class="hl-num">${h.num}</div><div class="hl-label">${h.label}</div></div>`).join('');
+  document.getElementById('detail-blocks').innerHTML=p.details.map(d=>`<div class="detail-block"><div class="detail-heading">${d.heading}</div><div class="detail-body">${d.body}</div></div>`).join('');
+  document.getElementById('detail-tags').innerHTML=p.tags.map(t=>`<span class="detail-tag">${t}</span>`).join('');
+  window.scrollTo({top:0});
+}
+
+function copyLink(){
+  const url=location.href;
+  const btn=document.getElementById('share-btn');
+  (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{}).catch(()=>{const ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta)});
+  btn.classList.add('copied');
+  setTimeout(()=>btn.classList.remove('copied'),2200);
+}
+
+function route(){const id=getHashProject();if(id&&projects[id])showDetailView(id);else showMainView()}
+window.addEventListener('hashchange', route);
+
+// Run routing once DOM is fully ready — fixes direct URL load on GitHub Pages
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', route);
+} else {
+  route();
+}
+
+let _scrollObs=null;
+function initScrollNav(){
+  const reveals=document.querySelectorAll('.reveal');
+  if(_scrollObs)_scrollObs.disconnect();
+  _scrollObs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*55);_scrollObs.unobserve(e.target)}})},{threshold:0.08});
+  reveals.forEach(el=>_scrollObs.observe(el));
+  const secs=document.querySelectorAll('#main-view section[id]');
+  const navAs=document.querySelectorAll('#nav-links a');
+  window.removeEventListener('scroll',window._sh);
+  window._sh=()=>{let cur='home';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-75)cur=s.id});navAs.forEach(a=>{const h=a.getAttribute('href');if(h)a.classList.toggle('active',h==='#'+cur)})};
+  window.addEventListener('scroll',window._sh,{passive:true});
+  window._sh();
+}
+</script>
+</body>
+</html>
