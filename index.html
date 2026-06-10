@@ -195,11 +195,11 @@
           </div>
           <p class="proj-title">AI-Driven Therapeutic Peptide Discovery &amp; Experimental Validation</p>
           <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
-            <li>Generated <strong>118,647 peptide sequences</strong> using diffusion-based generative models</li>
+            <li>Generated <strong>118,647 peptide sequences</strong> using reinforcement learning based GAN</li>
             <li>Screened candidates using Chemprop GNN for activity, toxicity, and mechanistic prediction</li>
             <li>Experimentally validated <strong>13 AMPs</strong> using MIC and cytotoxicity assays</li>
           </ul>
-          <div class="proj-tags"><span class="proj-tag">Diffusion Models</span><span class="proj-tag">Chemprop GNN</span><span class="proj-tag">AlphaFold</span><span class="proj-tag">Optuna</span><span class="proj-tag">HPC</span><span class="proj-tag">MIC Assay</span></div>
+          <div class="proj-tags"><span class="proj-tag">GAN</span><span class="proj-tag">Chemprop GNN</span><span class="proj-tag">AlphaFold</span><span class="proj-tag">Optuna</span><span class="proj-tag">HPC</span><span class="proj-tag">MIC Assay</span></div>
         </div>
 
         <div class="proj-card reveal" onclick="goToProject('workflow')">
@@ -386,7 +386,7 @@ const projects={amp:{icon:'💊',title:'AI-Driven Therapeutic Peptide Discovery 
                     {label:'Poster',url:'https://github.com/MalishaIslam/Antimicrobial-Peptide-Discovery/blob/main/Poster.png'}],
                      highlights:[{num:'118,647',label:'Peptide sequences generated'},{num:'13',label:'Therapeutic candidates validated'},{num:'7',label:'Bacterial strains tested'}],
                      overview:'This thesis developed an end-to-end AI-driven pipeline for discovering novel antimicrobial peptides (AMPs) to combat antibiotic-resistant bacteria. The project spans from computational generative design through wet lab experimental validation.',
-                     details:[{heading:'Generative Modeling',body:'Generated 118,647 novel peptide sequences using diffusion-based generative models trained on curated AMP databases.'},
+                     details:[{heading:'Generative Modeling',body:'Generated 118,647 novel peptide sequences using reinforcement learning based GAN trained on curated AMP databases.'},
                               {heading:'Computational Screening',body:'Screened all candidates using Chemprop Graph Neural Networks for antimicrobial activity prediction, toxicity estimation, and mechanistic inference. Hyperparameter optimization was performed with Optuna using Bayesian optimization.'},
                               {heading:'Experimental Validation',body:'Validated 13 shortlisted AMPs through Minimum Inhibitory Concentration (MIC) assays across multiple bacterial strains, and assessed mammalian cytotoxicity using cell-based assays.'}],tags:['Diffusion Models','Chemprop GNN','AlphaFold','Optuna','Bayesian Optimization', 'Fine-tuning','HPC','MIC Assay','Cytotoxicity Assay','Python','RDKit','SMILES']},
                 workflow:{icon:'⚙️',title:'Containerized Reproducible Workflow for UniProt Data Analysis',
