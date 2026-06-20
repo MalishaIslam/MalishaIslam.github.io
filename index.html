@@ -277,7 +277,21 @@
           </ul>
           <div class="proj-tags"><span class="proj-tag">Skeleton Features</span><span class="proj-tag">Gaze Features</span><span class="proj-tag">ML Classification</span></div>
         </div>
-
+        <div class="proj-card reveal" onclick="goToProject('gesturebright')">
+          <div class="proj-card-top">
+            <div class="proj-icon">✋</div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <a href="https://github.com/MalishaIslam/GestureBright---Hand-Gesture-Brightness-Control" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+              <a href="https://youtu.be/7YdUt1jNPTY" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Video &#x2197;</a>
+            </div>
+          </div>
+          <p class="proj-title">GestureBright — Hand Gesture Brightness Control</p>
+          <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+            <li>Built a <strong>real-time brightness control system</strong> using OpenCV and MediaPipe to detect hand landmarks via webcam</li>
+            <li>Mapped <strong>thumb-index fingertip distance</strong> to screen brightness (0–100%) with a live visual feedback bar</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span><span class="proj-tag">MediaPipe</span><span class="proj-tag">Computer Vision</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -430,7 +444,18 @@ const projects={amp:{icon:'💊',title:'AI-Driven Therapeutic Peptide Discovery 
                      details:[{heading:'Task Detection Framework',body:'Developed a classification system to detect three key therapeutic tasks: Imitation, Joint Attention, and Turn-Taking, that are core components of ASD behavioral therapy protocols.'},
                               {heading:'Feature Extraction',body:'Extracted skeleton-based features (body joint positions, motion trajectories, posture angles) and gaze-based features (eye contact direction, gaze fixation) from video recordings of 56 ASD children during therapy sessions.'},
                               {heading:'Therapy Comparison',body:'Analyzed whether Robot Enhanced Therapy (RET) produced measurably different task engagement patterns compared to Standard Human Therapy (SHT), providing data-driven insights for therapy design.'}],
-                     tags:['Machine Learning','Skeleton Features','Gaze Features','ASD','Robot Enhanced Therapy','Activity Recognition']}};
+                     tags:['Machine Learning','Skeleton Features','Gaze Features','ASD','Robot Enhanced Therapy','Activity Recognition']},
+               gesturebright:{icon:'✋',title:'GestureBright — Hand Gesture Brightness Control',
+               section:'Computer Vision · Personal Project',
+               links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/GestureBright---Hand-Gesture-Brightness-Control'},
+                      {label:'Video Demo',url:'https://youtu.be/7YdUt1jNPTY'}],
+               highlights:[{num:'Real-Time',label:'Webcam-based detection'},{num:'0–100%',label:'Brightness range controlled'},{num:'21',label:'Hand landmarks tracked'}],
+               overview:'GestureBright is a real-time computer vision application that controls laptop screen brightness using hand gestures. By detecting hand landmarks through a webcam, it maps the distance between the thumb and index fingertip to brightness levels — no keyboard or buttons needed.',
+               details:[{heading:'Hand Landmark Detection',body:'Used MediaPipe Hands to detect and track 21 hand landmarks in real time via webcam feed, identifying thumb tip (landmark 4) and index fingertip (landmark 8) for gesture recognition.'},
+                        {heading:'Gesture-to-Brightness Mapping',body:'Computed the Euclidean distance between the thumb and index fingertip using math.hypot(), then mapped it to a 0–100% brightness range using NumPy interpolation, enabling smooth and continuous control.'},
+                        {heading:'Live Visual Feedback',body:'Rendered a brightness bar overlay on the webcam feed using OpenCV, showing real-time brightness level as the user adjusts their finger distance.'},
+                        {heading:'Modular Architecture',body:'Built a reusable handdetector class (handpart.py) with findhands() and findpos() methods, separating hand detection logic from the main application for clean, extensible code.'}],
+               tags:['Python','OpenCV','MediaPipe','screen-brightness-control','NumPy','Computer Vision']}};
 
 function getHashProject(){const m=location.hash.match(/^#project\/(.+)$/);return m?m[1]:null}
 function goToProject(id){location.hash='project/'+id}
