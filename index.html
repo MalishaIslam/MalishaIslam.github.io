@@ -492,8 +492,14 @@ function showDetailView(id){
   document.getElementById('detail-icon').textContent=p.icon;
   document.getElementById('detail-title').textContent=p.title;
   document.getElementById('detail-overview').textContent=p.overview;
-  document.getElementById('detail-links').innerHTML=p.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener" class="detail-link">${l.label} ↗</a>`).join('');
-  document.getElementById('detail-highlights').innerHTML=p.highlights.map(h=>`<div class="highlight"><div class="hl-num">${h.num}</div><div class="hl-label">${h.label}</div></div>`).join('');
+  // document.getElementById('detail-links').innerHTML=p.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener" class="detail-link">${l.label} ↗</a>`).join('');
+  // document.getElementById('detail-highlights').innerHTML=p.highlights.map(h=>`<div class="highlight"><div class="hl-num">${h.num}</div><div class="hl-label">${h.label}</div></div>`).join('');
+  const linksEl=document.getElementById('detail-links');
+  linksEl.innerHTML=(p.links||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener" class="detail-link">${l.label} ↗</a>`).join('');
+  linksEl.style.display=(p.links&&p.links.length)?'flex':'none';
+  const hlEl=document.getElementById('detail-highlights');
+  hlEl.innerHTML=(p.highlights||[]).map(h=>`<div class="highlight"><div class="hl-num">${h.num}</div><div class="hl-label">${h.label}</div></div>`).join('');
+  hlEl.style.display=(p.highlights&&p.highlights.length)?'flex':'none';
   document.getElementById('detail-blocks').innerHTML=p.details.map(d=>`<div class="detail-block"><div class="detail-heading">${d.heading}</div><div class="detail-body">${d.body}</div></div>`).join('');
   document.getElementById('detail-tags').innerHTML=p.tags.map(t=>`<span class="detail-tag">${t}</span>`).join('');
   window.scrollTo({top:0});
