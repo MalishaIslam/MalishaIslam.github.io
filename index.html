@@ -182,7 +182,7 @@
   <section id="projects" style="border-top:1px solid var(--border)">
     <div class="container">
       <p class="section-label reveal">Research &amp; Projects</p>
-      <h2 class="section-title reveal">What I've Built &amp; Discovered</h2>
+      <h2 class="section-title reveal">AI, Machine Learning &amp; Data Science</h2>
       <div class="proj-grid">
 
         <div class="proj-card reveal" onclick="goToProject('amp')">
@@ -296,6 +296,42 @@
           <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span><span class="proj-tag">MediaPipe</span><span class="proj-tag">Computer Vision</span></div>
         </div>
       </div>
+      <!-- ===== DESIGN PROJECTS SUBSECTION ===== -->
+        <p class="section-label reveal" style="margin-top:4.5rem">Engineering Design</p>
+        <h2 class="section-title reveal">Design &amp; Engineering Projects</h2>
+        <div class="proj-grid">
+
+          <div class="proj-card reveal" onclick="goToProject('wiring')">
+            <div class="proj-card-top">
+              <div class="proj-icon">&#x26A1;</div>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <a href="https://github.com/MalishaIslam/Residential-electrical-wiring-design" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+              </div>
+            </div>
+            <p class="proj-title">Complete Electrical Wiring Design of a Multistoried Residential Building</p>
+            <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+              <li>Developed an 11&nbsp;kV/0.415&nbsp;kV substation single-line diagram with 300&nbsp;kVA transformer, HT/LT protection, power-factor correction, earthing, and lightning protection</li>
+              <li>Performed load calculations and sized breakers, cables, and busbars for the sub-distribution and main distribution boards</li>
+            </ul>
+            <div class="proj-tags"><span class="proj-tag">AutoCAD</span><span class="proj-tag">Substation Design</span><span class="proj-tag">Load Calculation</span><span class="proj-tag">Power Systems</span></div>
+          </div>
+
+          <div class="proj-card reveal" onclick="goToProject('firealarm')">
+            <div class="proj-card-top">
+              <div class="proj-icon">&#x1F6A8;</div>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <a href="https://github.com/MalishaIslam/RMGFactory_Fire-Detection_and_Alarm-System-Design" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+              </div>
+            </div>
+            <p class="proj-title">Fire Detection &amp; Alarm System Design for an RMG Factory</p>
+            <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+              <li>Designed detection/alarm zoning, detector placement, FACP location, manual call points, and sounders for a 12,345&nbsp;sq.&nbsp;ft. industrial facility</li>
+              <li>Produced zoning layouts, wiring diagrams, and design documentation based on NFPA design concepts</li>
+            </ul>
+            <div class="proj-tags"><span class="proj-tag">Fire Alarm Design</span><span class="proj-tag">NFPA</span><span class="proj-tag">AutoCAD</span><span class="proj-tag">Safety Systems</span></div>
+          </div>
+
+        </div>
     </div>
   </section>
 
@@ -461,7 +497,24 @@ const projects={amp:{icon:'💊',title:'AI-Driven Therapeutic Peptide Discovery 
                         {heading:'Gesture-to-Brightness Mapping',body:'Computed the Euclidean distance between the thumb and index fingertip using math.hypot(), then mapped it to a 0–100% brightness range using NumPy interpolation, enabling smooth and continuous control.'},
                         {heading:'Live Visual Feedback',body:'Rendered a brightness bar overlay on the webcam feed using OpenCV, showing real-time brightness level as the user adjusts their finger distance.'},
                         {heading:'Modular Architecture',body:'Built a reusable handdetector class (handpart.py) with findhands() and findpos() methods, separating hand detection logic from the main application for clean, extensible code.'}],
-               tags:['Python','OpenCV','MediaPipe','screen-brightness-control','NumPy','Computer Vision']}};
+               tags:['Python','OpenCV','MediaPipe','screen-brightness-control','NumPy','Computer Vision']},
+                wiring:{icon:'⚡',title:'Complete Electrical Wiring Design of a Multistoried Residential Building',
+                        section:'Electrical Design · Engineering Design Project',
+                        links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/Residential-electrical-wiring-design'}],
+                        highlights:[{num:'300 kVA',label:'Substation transformer sized'},{num:'11/0.415 kV',label:'Substation voltage levels'},{num:'AutoCAD',label:'Full drawing package'}],
+                        overview:'This project delivers a complete electrical wiring and power distribution design for a multistoried residential building, spanning substation design, protection, load calculation, and a full CAD-based electrical drawing package.',
+                        details:[{heading:'Substation & Single-Line Design',body:'Developed an 11 kV/0.415 kV substation single-line diagram with a 300 kVA transformer, HT/LT protection, power-factor correction sizing, earthing system, and lightning protection design.'},
+                                 {heading:'Load Calculation & Equipment Sizing',body:'Performed building load calculations with demand factors, then sized circuit breakers, cables, and busbars for the sub-distribution boards and the main distribution board.'},
+                                 {heading:'Drawing Package',body:'Produced fixture layouts, conduit layouts, circuit diagrams, and a complete electrical drawing package using a CAD-based design workflow.'}],
+                        tags:['AutoCAD','Substation Design','Single-Line Diagram','Load Calculation','Protection Coordination','Power Systems','Electrical Design']},
+                firealarm:{icon:'🚨',title:'Fire Detection & Alarm System Design for an RMG Factory',
+                           section:'Fire Safety Design · Engineering Design Project',
+                           links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/RMGFactory_Fire-Detection_and_Alarm-System-Design'}],
+                           highlights:[{num:'12,345 sq.ft.',label:'Industrial facility covered'},{num:'NFPA',label:'Design concepts followed'},{num:'FACP',label:'Central control panel located'}],
+                           overview:'This project presents a fire detection and alarm system design for a Ready-Made Garments (RMG) industrial factory, covering detection zoning, device placement, and full design documentation based on NFPA design concepts.',
+                           details:[{heading:'Detection & Zoning Design',body:'Designed fire detection and alarm zoning, detector placement, FACP (Fire Alarm Control Panel) location, manual call points, and sounders for a 12,345 sq. ft. industrial facility.'},
+                                    {heading:'Documentation & Layouts',body:'Produced zoning layouts, wiring diagrams, and complete design documentation developed in line with NFPA-based fire alarm design concepts.'}],
+                           tags:['Fire Alarm Design','NFPA','FACP','Detector Placement','AutoCAD','Safety Systems','Design Documentation']}};
 
 function getHashProject(){const m=location.hash.match(/^#project\/(.+)$/);return m?m[1]:null}
 function goToProject(id){location.hash='project/'+id}
