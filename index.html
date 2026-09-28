@@ -131,6 +131,7 @@
     <a id="nav-name" class="nav-name" href="#home">Malisha Islam Tapotee</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#home">Home</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#projects">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -175,6 +176,17 @@
             <span class="proj-tag">Machine Learning</span><span class="proj-tag">Technical project support</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="education" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <p class="section-label reveal">Education</p>
+      <h2 class="section-title reveal">Academic Background</h2>
+      <div class="exp-list">
+        <div class="exp-item reveal"><div><p class="exp-dates">Jan 2024 – Aug 2026</p><p class="exp-org">University of Central Florida</p><p class="exp-org">Orlando, FL</p></div><div><p class="exp-role">Master of Science in Electrical Engineering</p><p class="exp-dept">GPA: 3.87</p><p style="font-size:14px;color:var(--text);line-height:1.8">Thesis: <a href="https://stars.library.ucf.edu/gradstudies_etd_2026/364/" target="_blank" rel="noopener" style="color:#3367d6;text-decoration:underline;font-weight:500">Designing Effective Antimicrobials: A Deep Learning Approach to Antimicrobial Peptide Generation and Screening &#x2197;</a></p></div></div>
+        <div class="exp-item reveal"><div><p class="exp-dates">Jan 2018 – Apr 2023</p><p class="exp-org">University of Dhaka</p><p class="exp-org">Dhaka, Bangladesh</p></div><div><p class="exp-role">Bachelor of Science in Electrical and Electronic Engineering</p><p class="exp-dept">GPA: 3.65</p></div></div>
       </div>
     </div>
   </section>
@@ -526,7 +538,7 @@ function showMainView(){
   document.getElementById('footer-back').style.display='none';
   document.title='Malisha Islam Tapotee';
   const nl=document.getElementById('nav-links');
-  nl.innerHTML='<li><a href="#home">Home</a></li><li><a href="#projects">Research</a></li><li><a href="#publications">Publications</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#leadership">Leadership</a></li>';
+  nl.innerHTML='<li><a href="#home">Home</a></li><li><a href="#education">Education</a></li><li><a href="#projects">Research</a></li><li><a href="#publications">Publications</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#leadership">Leadership</a></li>';
   const nn=document.getElementById('nav-name');
   nn.href='#home';nn.onclick=null;nn.style.cursor='';
   initScrollNav();
@@ -540,7 +552,7 @@ function showDetailView(id){
   document.getElementById('footer-back').style.display='block';
   document.title=p.title+' · Malisha Islam Tapotee';
   const nl=document.getElementById('nav-links');
-  const secs=[['home','Home'],['projects','Research'],['publications','Publications'],['skills','Skills'],['experience','Experience'],['leadership','Leadership']];
+  const secs=[['home','Home'],['education','Education'],['projects','Research'],['publications','Publications'],['skills','Skills'],['experience','Experience'],['leadership','Leadership']];
   nl.innerHTML=secs.map(([sid,label])=>`<li><a onclick="goBack();setTimeout(()=>{const el=document.getElementById('${sid}');if(el)el.scrollIntoView({behavior:'smooth'})},100)" style="cursor:pointer">${label}</a></li>`).join('');
   const nn=document.getElementById('nav-name');
   nn.removeAttribute('href');nn.onclick=goBack;nn.style.cursor='pointer';
