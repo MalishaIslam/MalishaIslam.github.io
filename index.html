@@ -344,6 +344,28 @@
           </div>
 
         </div>
+      
+        <!-- ===== SOFTWARE PROJECTS SUBSECTION ===== -->
+        <p class="section-label reveal" style="margin-top:4.5rem">Software Development</p>
+        <h2 class="section-title reveal">Full-Stack &amp; Database Projects</h2>
+        <div class="proj-grid">
+
+          <div class="proj-card reveal" onclick="goToProject('studenttracker')">
+            <div class="proj-card-top">
+              <div class="proj-icon">&#x1F5C4;&#xFE0F;</div>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <a href="https://github.com/MalishaIslam/student-success-tracker" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+              </div>
+            </div>
+            <p class="proj-title">Student Success Tracker — Learning Analytics Web Application</p>
+            <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+              <li>Built an <strong>ASP.NET Core MVC + SQL Server</strong> app for student-support staff over <strong>32,000+</strong> anonymised student records</li>
+              <li>Least-privilege stored-procedure data layer, audit logging, and an early-warning report flagging students at risk of failing</li>
+            </ul>
+            <div class="proj-tags"><span class="proj-tag">C#</span><span class="proj-tag">ASP.NET Core</span><span class="proj-tag">SQL Server</span><span class="proj-tag">Docker</span><span class="proj-tag">CI/CD</span></div>
+          </div>
+
+        </div>
     </div>
   </section>
 
@@ -365,6 +387,7 @@
       <p class="section-label reveal">Technical Skills</p>
       <h2 class="section-title reveal">Tools &amp; Expertise</h2>
       <div class="reveal"><p class="skill-section-title">Programming</p><div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">C</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Web &amp; Software Development</p><div class="chips"><span class="chip">C#</span><span class="chip">ASP.NET Core MVC</span><span class="chip">SQL Server (T-SQL)</span><span class="chip">ADO.NET</span><span class="chip">Docker</span><span class="chip">xUnit</span><span class="chip">GitHub Actions</span></div></div>
       <div class="reveal"><p class="skill-section-title">Machine Learning &amp; Deep Learning</p><div class="chips"><span class="chip">Classical ML methods</span><span class="chip">Diffusion models</span><span class="chip">Graph Neural Networks</span><span class="chip">Transformers</span><span class="chip">GANs</span><span class="chip">CycleGAN</span></div></div>
       <div class="reveal"><p class="skill-section-title">Computational Biology</p><div class="chips"><span class="chip">RDKit</span><span class="chip">SMILES pipelines</span><span class="chip">BioPython</span><span class="chip">Chemprop</span></div></div>
       <div class="reveal"><p class="skill-section-title">Deep Learning Frameworks</p><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span></div></div>
@@ -526,7 +549,18 @@ const projects={amp:{icon:'💊',title:'AI-Driven Therapeutic Peptide Discovery 
                            overview:'This project presents a fire detection and alarm system design for a Ready-Made Garments (RMG) industrial factory, covering detection zoning, device placement, and full design documentation based on NFPA design concepts.',
                            details:[{heading:'Detection & Zoning Design',body:'Designed fire detection and alarm zoning, detector placement, FACP (Fire Alarm Control Panel) location, manual call points, and sounders for a 12,345 sq. ft. industrial facility.'},
                                     {heading:'Documentation & Layouts',body:'Produced zoning layouts, wiring diagrams, and complete design documentation developed in line with NFPA-based fire alarm design concepts.'}],
-                           tags:['Fire Alarm Design','NFPA','FACP','Detector Placement','AutoCAD','Safety Systems','Design Documentation']}};
+                           tags:['Fire Alarm Design','NFPA','FACP','Detector Placement','AutoCAD','Safety Systems','Design Documentation']},
+               studenttracker:{icon:'🗄️',title:'Student Success Tracker — Learning Analytics Web Application',
+                           section:'Full-Stack Development · SQL Server & ASP.NET Core MVC',
+                           links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/student-success-tracker'}],
+                           highlights:[{num:'32,600',label:'Enrollments loaded from OULAD'},{num:'12',label:'T-SQL stored procedures'},{num:'38',label:'End-to-end smoke-test checks'}],
+                           overview:'A secure web application for student-support staff, built on SQL Server and ASP.NET Core MVC. It loads 32,000+ anonymised records from the Open University Learning Analytics Dataset (OULAD) and lets signed-in staff search, filter and edit student records, record assessment scores, review course outcomes, and run an early-warning report of students at risk of failing.',
+                           details:[{heading:'Database Design & Data Import',body:'Designed a normalised SQL Server schema (modules, course presentations, students, enrollments, assessments, results, and an audit log) with primary/foreign keys, check constraints, indexes, and rowversion columns. The raw OULAD CSV files are bulk-inserted into a staging schema, then cleaned, type-converted, de-duplicated, and loaded in a single transaction.'},
+                                    {heading:'Stored-Procedure Data Layer',body:'All data access goes through 12 T-SQL stored procedures covering paged search with whitelisted sorting, multi-result-set reads, transactional create/update/delete with audit logging, and reporting. The app connects via ADO.NET using a least-privilege login that can only execute procedures and cannot read or modify tables directly.'},
+                                    {heading:'Staff-Facing Features',body:'A dashboard with pass and withdrawal rates across 22 course runs; a searchable, filterable, sortable student list with CSV export; per-student assessment scores; an at-risk report that flags students by missed deadlines or low average scores and shows how they actually finished; an audit log; and a read-only JSON API with interactive docs.'},
+                                    {heading:'Security & Accessibility',body:'Protected against SQL injection, CSRF, and CSV injection, with rate-limited cookie sign-in, rowversion-based conflict detection for concurrent edits, and Content-Security-Policy headers. The interface uses semantic HTML, announced sort states, focus-managed error summaries, keyboard-only operation, and light and dark themes.'},
+                                    {heading:'Testing & CI',body:'xUnit unit tests cover validation, paging, CSV escaping, sign-in, and controller flows. A 38-check end-to-end smoke test runs against the live app, and GitHub Actions spins up a real SQL Server container on every push to run the full import and end-to-end suite.'}],
+                           tags:['C#','ASP.NET Core MVC','SQL Server','T-SQL','Stored Procedures','ADO.NET','Docker','xUnit','GitHub Actions','HTML/CSS/JavaScript']}};
 
 function getHashProject(){const m=location.hash.match(/^#project\/(.+)$/);return m?m[1]:null}
 function goToProject(id){location.hash='project/'+id}
