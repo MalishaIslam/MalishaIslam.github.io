@@ -347,7 +347,7 @@
       
         <!-- ===== SOFTWARE PROJECTS SUBSECTION ===== -->
         <p class="section-label reveal" style="margin-top:4.5rem">Software Development</p>
-        <h2 class="section-title reveal">Full-Stack &amp; Database Projects</h2>
+        <h2 class="section-title reveal">Full-Stack, Database &amp; Analytics Projects</h2>
         <div class="proj-grid">
 
           <div class="proj-card reveal" onclick="goToProject('studenttracker')">
@@ -365,6 +365,21 @@
             <div class="proj-tags"><span class="proj-tag">C#</span><span class="proj-tag">ASP.NET Core</span><span class="proj-tag">SQL Server</span><span class="proj-tag">Docker</span><span class="proj-tag">CI/CD</span></div>
           </div>
 
+          <div class="proj-card reveal" onclick="goToProject('powerbi')">
+            <div class="proj-card-top">
+              <div class="proj-icon">&#x1F393;</div>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <a href="https://github.com/MalishaIslam/Student-outcomes-powerbi" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">GitHub &#x2197;</a>
+                <a href="https://github.com/MalishaIslam/Student-outcomes-powerbi/blob/main/Student_Outcomes_Dashboard.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:12px;font-weight:500;color:var(--accent);background:var(--accent-pale);border:1px solid #b7e4c7;padding:0.2rem 0.65rem;border-radius:99px;text-decoration:none">Report &#x2197;</a>
+              </div>
+            </div>
+            <p class="proj-title">Student Outcomes Dashboard — Power BI Learning Analytics Report</p>
+            <ul style="font-size:13px;color:var(--text);line-height:1.7;padding-left:1.1rem;margin:0.4rem 0 0.6rem;display:flex;flex-direction:column;gap:0.25rem">
+              <li>Built a <strong>two-page interactive Power BI dashboard</strong> over <strong>32,600</strong> OULAD course enrollments</li>
+              <li>DAX KPI measures for pass, withdrawal, and distinction rates, with synced slicers across pages</li>
+            </ul>
+            <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Power Query</span><span class="proj-tag">Data Visualization</span></div>
+          </div>
         </div>
     </div>
   </section>
@@ -394,7 +409,7 @@
       <div class="reveal"><p class="skill-section-title">Scientific Computing &amp; Reproducibility</p><div class="chips"><span class="chip">Linux</span><span class="chip">HPC Clusters</span><span class="chip">Git</span><span class="chip">Podman</span><span class="chip">VS Code</span></div></div>
       <div class="reveal"><p class="skill-section-title">Wet Lab</p><div class="chips"><span class="chip">MIC Assays</span><span class="chip">Cytotoxicity Assays</span><span class="chip">Lyophilization</span><span class="chip">Lab Inventory Management</span><span class="chip">Vendor Coordination</span><span class="chip">Experimental Documentation</span></div></div>
       <div class="reveal"><p class="skill-section-title">Structural Bioinformatics &amp; Molecular Simulation</p><div class="chips"><span class="chip">AlphaFold</span><span class="chip">GROMACS</span><span class="chip">VMD</span><span class="chip">ChimeraX</span></div></div>
-      <div class="reveal"><p class="skill-section-title">Data Analysis &amp; Visualization</p><div class="chips"><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SciPy</span><span class="chip">matplotlib</span><span class="chip">seaborn</span><span class="chip">ggplot2</span><span class="chip">Plotly</span><span class="chip">Microsoft Office (Word, Excel, PowerPoint)</span></div></div>
+      <div class="reveal"><p class="skill-section-title">Data Analysis &amp; Visualization</p><div class="chips"><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SciPy</span><span class="chip">matplotlib</span><span class="chip">seaborn</span><span class="chip">ggplot2</span><span class="chip">Plotly</span><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip">Microsoft Office (Word, Excel, PowerPoint)</span></div></div>
       <div class="reveal"><p class="skill-section-title">Simulation &amp; Modeling Software</p><div class="chips"><span class="chip">MATLAB</span><span class="chip">Simulink</span></div></div>
       <div class="reveal"><p class="skill-section-title">Engineering Design</p><div class="chips"><span class="chip">AutoCAD</span><span class="chip">CAD Drafting</span><span class="chip">PSpice</span><span class="chip">Proteus</span></div></div>
       <div class="reveal"><p class="skill-section-title">Documentation</p><div class="chips"><span class="chip">Engineering calculations</span><span class="chip">Technical reports</span><span class="chip">Design documentation</span><span class="chip">SOP adherence</span><span class="chip">Team coordination</span></div></div>
@@ -560,7 +575,19 @@ const projects={amp:{icon:'💊',title:'AI-Driven Therapeutic Peptide Discovery 
                                     {heading:'Staff-Facing Features',body:'A dashboard with pass and withdrawal rates across 22 course runs; a searchable, filterable, sortable student list with CSV export; per-student assessment scores; an at-risk report that flags students by missed deadlines or low average scores and shows how they actually finished; an audit log; and a read-only JSON API with interactive docs.'},
                                     {heading:'Security & Accessibility',body:'Protected against SQL injection, CSRF, and CSV injection, with rate-limited cookie sign-in, rowversion-based conflict detection for concurrent edits, and Content-Security-Policy headers. The interface uses semantic HTML, announced sort states, focus-managed error summaries, keyboard-only operation, and light and dark themes.'},
                                     {heading:'Testing & CI',body:'xUnit unit tests cover validation, paging, CSV escaping, sign-in, and controller flows. A 38-check end-to-end smoke test runs against the live app, and GitHub Actions spins up a real SQL Server container on every push to run the full import and end-to-end suite.'}],
-                           tags:['C#','ASP.NET Core MVC','SQL Server','T-SQL','Stored Procedures','ADO.NET','Docker','xUnit','GitHub Actions','HTML/CSS/JavaScript']}};
+                           tags:['C#','ASP.NET Core MVC','SQL Server','T-SQL','Stored Procedures','ADO.NET','Docker','xUnit','GitHub Actions','HTML/CSS/JavaScript']},
+               powerbi:{icon:'🎓',title:'Student Outcomes Dashboard — Power BI Learning Analytics Report',
+                           section:'Data Analytics · Power BI, Power Query & DAX',
+                           links:[{label:'GitHub Repo',url:'https://github.com/MalishaIslam/Student-outcomes-powerbi'},
+                                  {label:'Report PDF',url:'https://github.com/MalishaIslam/Student-outcomes-powerbi/blob/main/Student_Outcomes_Dashboard.pdf'}],
+                           highlights:[{num:'32,600',label:'OULAD enrollments analysed'},{num:'47.2%',label:'Overall pass rate (incl. distinction)'},{num:'2',label:'Interactive report pages'}],
+                           overview:'An interactive two-page Power BI dashboard analysing about 32,600 course-enrollment records from the Open University Learning Analytics Dataset (OULAD). It shows how students finish their courses (pass, distinction, fail, or withdraw) and how those outcomes vary by course module, semester, education level, and region. It is the analytics companion to the Student Success Tracker web application, built on the same dataset.',
+                           details:[{heading:'Data Preparation',body:'Loaded the OULAD student information table into Power BI with Power Query, then checked and set column data types before modelling.'},
+                                    {heading:'KPI Measures in DAX',body:'Wrote DAX measures for total enrollments, pass rate, withdrawal rate, and distinction rate. Pass rate counts both Pass and Distinction as successful completions.'},
+                                    {heading:'Report Design',body:'The Overview page shows KPI cards, students by region, and slicers for course module, gender, and age band. The Outcome Analysis page shows outcomes by module, pass rate by education level, the pass-rate trend across semesters, and the overall outcome distribution. Visuals include cards, donut, stacked bar, clustered column, line, and treemap charts.'},
+                                    {heading:'Interactivity',body:'Page-navigation buttons move between the two pages, and slicers are synced so a filter chosen on the Overview page also applies to the Outcome Analysis page.'},
+                                    {heading:'Key Findings',body:'Fewer than half of enrollments end in a pass: 47.2% pass (including 9.3% with distinction), 21.6% fail, and 31.2% withdraw. Students with a postgraduate qualification pass about 65% of the time, compared with about 30% for those with no formal qualifications. October-start course runs have higher pass rates than February-start runs in both 2013 and 2014, and some modules, such as CCC, lose a much larger share of students to withdrawal.'}],
+                           tags:['Power BI','Power Query','DAX','Data Modelling','KPI Reporting','Data Visualization','Learning Analytics']}};
 
 function getHashProject(){const m=location.hash.match(/^#project\/(.+)$/);return m?m[1]:null}
 function goToProject(id){location.hash='project/'+id}
